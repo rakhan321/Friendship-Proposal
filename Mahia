@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>বন্ধুত্বের গল্প মাহিয়ার সাথে</title>
+  <style>
+    body {
+      font-family: 'Siyam Rupali', 'Georgia', serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    .step {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      animation: fadeIn 1s ease-in-out;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 500px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="step1" class="step" style="display:flex;">
+    <h2>👫 ছোটবেলার বন্ধুত্ব</h2>
+    <p>মাহিয়া, আমাদের বন্ধুত্ব শুরু হয়েছিল ছোটবেলায় — নিঃস্বার্থ, সাদামাটা, কিন্তু অমূল্য।</p>
+    <p>তুমি ছিলে আমার খেলার সাথি, হাসির কারণ আর চিরদিনের বন্ধু।</p>
+    <button onclick="nextStep(2)">Next</button>
+  </div>
+
+  <div id="step2" class="step">
+    <h2>💖 রাখান & মাহিয়া</h2>
+    <p>রাখান আর মাহিয়া – দুই নাম, কিন্তু এক বন্ধুত্বের গল্প।</p>
+    <p>তুমি শুধু বন্ধু না, তুমি সবচেয়ে আপন একজন হয়ে গেছো।</p>
+    <button onclick="nextStep(3)">Next</button>
+  </div>
+
+  <div id="step3" class="step">
+    <h2>🤝 পাশে থাকা</h2>
+    <p>জীবনের সব কঠিন সময়েও তুমি পাশে ছিলে।</p>
+    <p>তোমার হাসি, সাহস আর বন্ধুত্ব আমাকে এগিয়ে যেতে শিখিয়েছে।</p>
+    <button onclick="nextStep(4)">Next</button>
+  </div>
+
+  <div id="step4" class="step">
+    <h2>🌸 বন্ধুত্বের রঙ</h2>
+    <p>তোমার মতো বন্ধুকে পেয়ে আমার জীবনটা অনেক রঙিন।</p>
+    <p>তুমি শুধু একজন বন্ধু না, আমার আত্মার আত্মীয়।</p>
+    <button onclick="nextStep(5)">Next</button>
+  </div>
+
+  <div id="step5" class="step">
+    <h2>🌟 চিরবন্ধু</h2>
+    <p>মাহিয়া, এই বন্ধুত্বটা চিরকাল থাকবে – সময় যতই যাক না কেন।</p>
+    <p>তুমি আমার জীবনের সেই বন্ধু, যাকে আমি কখনো হারাতে চাই না।</p>
+    <p>– আবু রাখান নিলয়</p>
+  </div>
+
+  <script>
+    function nextStep(stepNum) {
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById('step' + i).style.display = 'none';
+      }
+      document.getElementById('step' + stepNum).style.display = 'flex';
+    }
+
+    // Optional: Automatically go through each step every 12s
+    const timings = [0, 12000, 24000, 36000, 48000];
+    timings.forEach((time, index) => {
+      setTimeout(() => nextStep(index + 1), time);
+    });
+  </script>
+
+</body>
+</html>
